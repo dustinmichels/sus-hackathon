@@ -13,6 +13,30 @@ export const palette: Record<string, string> = {
   k: '#000000', // outline
 };
 
+export interface Sprite {
+  width: number;
+  height: number;
+  /** Horizontal runs of one color, merged into a single rect each. */
+  rects: { x: number; y: number; w: number; fill: string }[];
+}
+
+export function parseSprite(art: string): Sprite {
+  const rows = art.trim().split('\n');
+  const rects: Sprite['rects'] = [];
+  rows.forEach((row, y) => {
+    let x = 0;
+    while (x < row.length) {
+      const key = row[x];
+      let end = x + 1;
+      while (row[end] === key) end++;
+      const fill = palette[key];
+      if (fill) rects.push({ x, y, w: end - x, fill });
+      x = end;
+    }
+  });
+  return { width: Math.max(...rows.map((row) => row.length)), height: rows.length, rects };
+}
+
 // Tiles vertically: the stem leaves the top and enters the bottom at column 7.
 const vineSegment = `
 .......d..........
@@ -91,13 +115,4 @@ kk..kwwk..
 k....kwwk.
 .....kwwk.
 ......kk..
-`;
-
-export const flower = `
-.mmm.
-mrrmm
-mrwrm
-mmrrm
-.mmp.
-..d..
 `;

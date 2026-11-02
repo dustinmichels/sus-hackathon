@@ -1,11 +1,7 @@
 /* Palette sampled from flyer 1. */
 :root {
   --violet: #351674;
-  --violet-deep: #27105a;
   --signal: #00ff66;
-  --bloom: #b3319f;
-  --petal: #e27ad6;
-  --leaf: #66c536;
   --paper: #fafef4;
   --muted: #cdc2ec;
   --ink: #000;
@@ -16,16 +12,12 @@
   /* Body scale, 4:3 */
   --step-0: 1.125rem;
   --step-1: 1.5rem;
-  --step-2: 2rem;
 
   /* Press Start 2P stays crisp on multiples of 8px. */
   --pixel-s: 0.75rem;
   --pixel-m: 1rem;
   --pixel-l: 1.5rem;
-  --pixel-xl: 2rem;
-  --pixel-xxl: 3rem;
 
-  --measure: 64ch;
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
 
   /* One white pixel diamond, repeated as the flyer's divider. */
@@ -38,11 +30,17 @@
   box-sizing: border-box;
 }
 
+/* Pixel arrow from src/pages/cursor.svg.ts; hotspot at its tip. Links keep the browser's hand. */
 html {
-  scroll-behavior: smooth;
+  cursor:
+    url('/cursor.svg') 0 0,
+    auto;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
   margin: 0;
   background: var(--violet);
   color: var(--paper);
@@ -52,19 +50,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2 {
+h1 {
   font-family: var(--font-pixel);
   font-weight: 400;
   line-height: 1.3;
   margin: 0;
   text-wrap: balance;
-}
-
-h3 {
-  font-size: var(--step-1);
-  line-height: 1.2;
-  margin: 0;
 }
 
 p {
@@ -110,20 +101,10 @@ a {
   font-size: var(--pixel-m);
   line-height: 1;
   text-decoration: none;
-  box-shadow: 5px 5px 0 var(--bloom);
-  transition:
-    transform 80ms steps(2),
-    box-shadow 80ms steps(2);
 }
 
 .btn:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 2px 2px 0 var(--bloom);
-}
-
-.btn:active {
-  transform: translate(5px, 5px);
-  box-shadow: 0 0 0 var(--bloom);
+  background: var(--paper);
 }
 
 .diamonds {
@@ -138,16 +119,4 @@ a {
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
 }

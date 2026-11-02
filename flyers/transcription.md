@@ -6,24 +6,25 @@ This document contains a complete transcription of all textual, visual, structur
 
 ## 1. Event Summary (Combined Data)
 
-| Field | Detail | Source / Flyer |
-| :--- | :--- | :--- |
-| **Event Name** | **Sustainable Project Hackathon** | Flyer 1 & Flyer 2 |
-| **Dates** | **November 14–15** (`Nov 14-15th`) | Flyer 1 & Flyer 2 |
-| **Location** | **Anderson 206** (Tufts University Anderson Hall) | Flyer 1 & Flyer 2 |
-| **Target Audience** | All majors welcome; beginner-friendly (no prior experience required) | Flyer 1 & Flyer 2 |
-| **Mission / Purpose** | Grow sustainable solutions for Tufts campus and implement them through the Green Fund | Flyer 1 & Flyer 2 |
-| **Prizes** | Cash prize for winners ($1,000+ in cash prizes) | Flyer 1 ("Cash Prize for Winners"), Flyer 2 ("$1000+ in cash prizes!") |
-| **Provided Items** | Food, Microcontrollers, and Art Supplies provided | Flyer 1 ("Food Provided"), Flyer 2 ("Food, Microcontrollers, & Art Supplies Provided!") |
-| **Sponsors & Organizers** | • Tufts University Green Fund<br>• TCU Sustainability Sub-Committee (Tufts Community Union Senate)<br>• Tufts Core Fellows (author metadata) | Flyer 1 & Flyer 2 |
-| **QR Code Link** | `https://bit.ly/4iCKZ5H?r=qr` | Flyer 1 & Flyer 2 |
-| **Target Website** | `https://michael-r-gonzales.github.io/sustainable-hackathon/` | Resolved from QR code |
+| Field                     | Detail                                                                                                                                       | Source / Flyer                                                                          |
+| :------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
+| **Event Name**            | **Sustainable Project Hackathon**                                                                                                            | Flyer 1 & Flyer 2                                                                       |
+| **Dates**                 | **November 14–15** (`Nov 14-15th`)                                                                                                           | Flyer 1 & Flyer 2                                                                       |
+| **Location**              | **Anderson 206** (Tufts University Anderson Hall)                                                                                            | Flyer 1 & Flyer 2                                                                       |
+| **Target Audience**       | All majors welcome; beginner-friendly (no prior experience required)                                                                         | Flyer 1 & Flyer 2                                                                       |
+| **Mission / Purpose**     | Grow sustainable solutions for Tufts campus and implement them through the Green Fund                                                        | Flyer 1 & Flyer 2                                                                       |
+| **Prizes**                | Cash prize for winners ($1,000+ in cash prizes)                                                                                              | Flyer 1 ("Cash Prize for Winners"), Flyer 2 ("$1000+ in cash prizes!")                  |
+| **Provided Items**        | Food, Microcontrollers, and Art Supplies provided                                                                                            | Flyer 1 ("Food Provided"), Flyer 2 ("Food, Microcontrollers, & Art Supplies Provided!") |
+| **Sponsors & Organizers** | • Tufts University Green Fund<br>• TCU Sustainability Sub-Committee (Tufts Community Union Senate)<br>• Tufts Core Fellows (author metadata) | Flyer 1 & Flyer 2                                                                       |
+| **QR Code Link**          | `https://bit.ly/4iCKZ5H?r=qr`                                                                                                                | Flyer 1 & Flyer 2                                                                       |
+| **Target Website**        | `https://michael-r-gonzales.github.io/sustainable-hackathon/`                                                                                | Resolved from QR code                                                                   |
 
 ---
 
 ## 2. Flyer 1 (`flyer1.pdf`)
 
 ### 2.1 Verbatim Text Content
+
 ```text
 Looking to create sustainable solutions at Tufts?
 ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
@@ -46,13 +47,14 @@ Beginner Friendly and All Majors Welcome!
 ```
 
 ### 2.2 Visual and Graphic Elements
+
 - **Art Style:** Retro 8-bit arcade / pixel-art aesthetic.
 - **Color Palette:**
   - Background: Deep royal purple / indigo.
   - Text & Accents: Bright neon lime green.
   - Border Illustrations: Magenta/pink pixel flowers with dark and light green pixel vines.
 - **Header Section:**
-  - Header prompt in green pixel font: *"Looking to create sustainable solutions at Tufts?"*
+  - Header prompt in green pixel font: _"Looking to create sustainable solutions at Tufts?"_
   - Divider: A horizontal chain of pixelated white/light diamonds and sparkles.
   - Decorative pixel sparkles/stars scattered in the upper corners.
 - **Title Block:**
@@ -85,11 +87,13 @@ Beginner Friendly and All Majors Welcome!
     - `Sub-Committee`
 
 ### 2.3 QR Code & Link Data
+
 - **Barcode Type:** QR Code (`VNBarcodeSymbologyQR`)
 - **Encoded URL:** `https://bit.ly/4iCKZ5H?r=qr`
 - **Resolved Destination URL:** `https://michael-r-gonzales.github.io/sustainable-hackathon/`
 
 ### 2.4 Document Metadata
+
 - **File Name:** `flyer1.pdf`
 - **File Size:** ~146 KB (146,325 bytes)
 - **Title:** Sustainable Project Hackathon
@@ -103,6 +107,7 @@ Beginner Friendly and All Majors Welcome!
 ## 3. Flyer 2 (`flyer2.pdf`)
 
 ### 3.1 Verbatim Text Content
+
 ```text
 [WINDOW 1] [Golden Ratio Spiral over Fiddlehead Fern]
 [WINDOW 2] Sustainable Project Hackathon
@@ -123,6 +128,7 @@ Food, Microcontrollers, & Art Supplies Provided!
 ```
 
 ### 3.2 Visual and Graphic Elements
+
 - **Art Style:** Modern nature-meets-technology collage design.
 - **Color Palette:**
   - Background: Teal / cyan digital matrix rain (streams of falling binary `0`s and `1`s) integrated with natural lush green tree foliage/canopy.
@@ -155,11 +161,13 @@ Food, Microcontrollers, & Art Supplies Provided!
     - **Right:** Tufts Community Union (TCU) SENATE elephant logo + `TCU Sustainability Sub-Committee`.
 
 ### 3.3 QR Code & Link Data
+
 - **Barcode Type:** QR Code (`VNBarcodeSymbologyQR`)
 - **Encoded URL:** `https://bit.ly/4iCKZ5H?r=qr`
 - **Resolved Destination URL:** `https://michael-r-gonzales.github.io/sustainable-hackathon/`
 
 ### 3.4 Document Metadata
+
 - **File Name:** `flyer2.pdf`
 - **File Size:** ~6.45 MB (6,454,359 bytes)
 - **Title:** Sustainable Project Hackathon
@@ -172,14 +180,14 @@ Food, Microcontrollers, & Art Supplies Provided!
 
 ## 4. Detailed Comparison & Complementary Details
 
-| Attribute | Flyer 1 (`flyer1.pdf`) | Flyer 2 (`flyer2.pdf`) | Combined Takeaway |
-| :--- | :--- | :--- | :--- |
-| **Visual Aesthetic** | Retro 8-bit pixel art, arcade gaming, purple/magenta/green | Nature & technology blend: binary code matrix rain, MacOS browser windows, botanical photography | Two distinct stylistic variations for different promotional audiences |
-| **Date & Room Formatting** | `Nov 14-15th@ Anderson 206` | `Nov 14-15th @ Anderson 206` | November 14–15, Room 206 in Anderson Hall |
-| **Cash Prize Description** | *"Cash Prize for Winners"* | *"With $1000+ in cash prizes!"* | Cash prizes total over $1,000 |
-| **Provided Materials** | *"Food Provided"* | *"Food, Microcontrollers, & Art Supplies Provided!"* | Participants receive free food, microcontrollers (hardware), and art supplies |
-| **Callout / Pitch** | *"Looking to create sustainable solutions at Tufts?"* | *"Grow sustainable solutions for Tufts campus and implement them through the Green Fund!"* | Focus is campus sustainability projects with opportunity for funding via Tufts Green Fund |
-| **Audience Inclusivity** | *"Beginner Friendly and All Majors Welcome!"* | *"For ALL MAJORS & beginner friendly!"* | Open to all academic majors; no coding or hackathon experience needed |
-| **Call to Action Text** | *"Learn more here!"* | *"Learn More"* | Both invite scanning the QR code for details |
-| **QR Code Destination** | `https://bit.ly/4iCKZ5H?r=qr` | `https://bit.ly/4iCKZ5H?r=qr` | Identical QR code pointing to official event site |
-| **Sponsorship** | Tufts Green Fund & TCU Senate Sustainability Sub-Committee | Tufts Green Fund & TCU Senate Sustainability Sub-Committee | Identical co-sponsors / organizing bodies |
+| Attribute                  | Flyer 1 (`flyer1.pdf`)                                     | Flyer 2 (`flyer2.pdf`)                                                                           | Combined Takeaway                                                                         |
+| :------------------------- | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
+| **Visual Aesthetic**       | Retro 8-bit pixel art, arcade gaming, purple/magenta/green | Nature & technology blend: binary code matrix rain, MacOS browser windows, botanical photography | Two distinct stylistic variations for different promotional audiences                     |
+| **Date & Room Formatting** | `Nov 14-15th@ Anderson 206`                                | `Nov 14-15th @ Anderson 206`                                                                     | November 14–15, Room 206 in Anderson Hall                                                 |
+| **Cash Prize Description** | _"Cash Prize for Winners"_                                 | _"With $1000+ in cash prizes!"_                                                                  | Cash prizes total over $1,000                                                             |
+| **Provided Materials**     | _"Food Provided"_                                          | _"Food, Microcontrollers, & Art Supplies Provided!"_                                             | Participants receive free food, microcontrollers (hardware), and art supplies             |
+| **Callout / Pitch**        | _"Looking to create sustainable solutions at Tufts?"_      | _"Grow sustainable solutions for Tufts campus and implement them through the Green Fund!"_       | Focus is campus sustainability projects with opportunity for funding via Tufts Green Fund |
+| **Audience Inclusivity**   | _"Beginner Friendly and All Majors Welcome!"_              | _"For ALL MAJORS & beginner friendly!"_                                                          | Open to all academic majors; no coding or hackathon experience needed                     |
+| **Call to Action Text**    | _"Learn more here!"_                                       | _"Learn More"_                                                                                   | Both invite scanning the QR code for details                                              |
+| **QR Code Destination**    | `https://bit.ly/4iCKZ5H?r=qr`                              | `https://bit.ly/4iCKZ5H?r=qr`                                                                    | Identical QR code pointing to official event site                                         |
+| **Sponsorship**            | Tufts Green Fund & TCU Senate Sustainability Sub-Committee | Tufts Green Fund & TCU Senate Sustainability Sub-Committee                                       | Identical co-sponsors / organizing bodies                                                 |

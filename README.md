@@ -13,6 +13,6 @@ Static site for the Sustainable Project Hackathon at Tufts (Nov 14–15, Anderso
 
 ## Editing content
 
-- Event details, schedule, prizes, makerspaces, FAQ, and the registration link: `src/data/event.ts`
+- Event details, flyer highlights, schedule, prizes, and the registration link: `src/data/event.ts`
 - Pixel sprites (vines, sparkles, cursor): `src/data/pixels.ts`, one character per pixel
 - Page layout and styles: `src/pages/index.astro`, `src/styles/global.css`

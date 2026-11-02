@@ -1,20 +1,26 @@
 {
   "name": "sus-hackathon",
-  "type": "module",
   "version": "0.0.1",
-  "packageManager": "bun@1.4.4",
-  "engines": {
-    "node": ">=22.23.4"
-  },
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
     "@fontsource/atkinson-hyperlegible-next": "^5.3.0",
     "@fontsource/press-start-2p": "^5.3.0",
     "astro": "^7.4.5"
-  }
+  },
+  "devDependencies": {
+    "@astrojs/compiler-rs": "^0.5.2",
+    "oxfmt": "^0.75.0"
+  },
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "packageManager": "bun@1.4.4"
 }
