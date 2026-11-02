@@ -79,13 +79,13 @@ a {
   outline-offset: 3px;
 }
 
-/* Green flyer badge. */
+/* Outlined flyer badge; solid fill is reserved for .btn. */
 .pill {
   display: inline-block;
   padding: 0.6em 0.9em;
+  border: 2px solid var(--signal);
   border-radius: 0.6em;
-  background: var(--signal);
-  color: var(--ink);
+  color: var(--signal);
   font-family: var(--font-pixel);
   font-size: var(--pixel-m);
   line-height: 1.4;
