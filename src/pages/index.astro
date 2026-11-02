@@ -1,0 +1,805 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PixelArt from '../components/PixelArt.astro';
+import greenFundLogo from '../assets/green-fund-logo.png';
+import { cursor, flower, ring, sparkle, vine } from '../data/pixels';
+import {
+  event,
+  faq,
+  judging,
+  makerspaces,
+  perks,
+  prizes,
+  schedule,
+  steps,
+} from '../data/event';
+
+const title = `${event.name} at Tufts, ${event.dates}, ${event.year}`;
+const description =
+  'A beginner-friendly, all-majors hackathon to build sustainable solutions for the Tufts campus, with cash prizes and a path to Green Fund implementation.';
+---
+
+<Base title={title} description={description}>
+  <header class="hero">
+    <PixelArt art={vine} class="vine vine-left" />
+    <PixelArt art={vine} class="vine vine-right" />
+    <PixelArt art={ring} px={5} class="spark s1" />
+    <PixelArt art={sparkle} px={4} class="spark s2" />
+    <PixelArt art={sparkle} px={3} class="spark s3" />
+    <PixelArt art={ring} px={4} class="spark s4" />
+
+    <nav class="nav" aria-label="Main">
+      <a class="home" href="#top">
+        <PixelArt art={flower} px={4} />
+        <span class="visually-hidden">{event.name}</span>
+      </a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#prizes">Prizes</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-body" id="top">
+      <p class="ask">Looking to create sustainable solutions at Tufts?</p>
+      <div class="diamonds" aria-hidden="true"></div>
+      <h1>
+        <span>Sustainable</span>
+        <span>Project</span>
+        <span>Hackathon</span>
+      </h1>
+      <p class="pill when">
+        <time datetime={`${event.year}-11-14`}>Nov 14</time>–<time datetime={`${event.year}-11-15`}
+          >15<sup>th</sup></time
+        > @ {event.room}
+      </p>
+      <p class="lede">24 hours to rethink, redesign, and build a more sustainable Tufts.</p>
+      <div class="cta">
+        <span class="cta-btn">
+          <a class="btn" href={event.registerUrl} target="_blank" rel="noopener">Register now</a>
+          <PixelArt art={cursor} px={4} class="cursor" />
+        </span>
+        <a class="cta-link" href="#schedule">See the schedule</a>
+      </div>
+      <ul class="perks" aria-label="Highlights">
+        {perks.map((perk) => <li class="pill">{perk}</li>)}
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap split">
+        <h2 id="about-title">Any career is a green career.</h2>
+        <div class="prose">
+          <p>
+            Many of us care about climate change but feel stuck, because we only see a few kinds of
+            solutions. This hackathon is where that changes.
+          </p>
+          <p>
+            Teams of 3 to 5 graduate and undergraduate students from every field take on real Tufts
+            challenges, learn from workshops and mentors, and turn ideas into working solutions.
+            Beginners are welcome. No team? You’ll form one on the day.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="steps-title">
+      <div class="wrap">
+        <h2 id="steps-title">How the weekend works</h2>
+        <ol class="steps">
+          {
+            steps.map((step, i) => (
+              <li>
+                <span class="step-n" aria-hidden="true">
+                  {i + 1}
+                </span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="section band" id="schedule" aria-labelledby="schedule-title">
+      <div class="wrap">
+        <h2 id="schedule-title">Schedule</h2>
+        <div class="days">
+          {
+            schedule.map((day) => (
+              <div class="day">
+                <h3>{day.day}</h3>
+                <ol>
+                  {day.events.map((item) => (
+                    <li>
+                      <span class="time">{item.time}</span>
+                      <span>
+                        {item.title}
+                        {item.note && <span class="note">{item.note}</span>}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))
+          }
+        </div>
+        <p class="aside">
+          Workshop topics and times will be added soon. Times may shift slightly before the event.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="prizes" aria-labelledby="prizes-title">
+      <div class="wrap">
+        <h2 id="prizes-title">Prizes and judging</h2>
+        <ul class="prizes">
+          {
+            prizes.map((prize) => (
+              <li>
+                <span class="place">{prize.place}</span>
+                <span class="amount">{prize.amount}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="aside">
+          Prize money is split within your team and is expected to increase before the event.
+        </p>
+        <div class="rounds">
+          {
+            judging.map((round) => (
+              <div>
+                <h3>{round.title}</h3>
+                <p>{round.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section fund" aria-labelledby="fund-title">
+      <div class="wrap">
+        <h2 id="fund-title">
+          Grow sustainable solutions for Tufts campus and implement them through the Green Fund.
+        </h2>
+        <p class="prose">
+          Winners get the option of turning their idea into a Green Fund project, with direct help
+          filling out the Green Fund application.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="spaces-title">
+      <div class="wrap split">
+        <div>
+          <h2 id="spaces-title">Makerspaces</h2>
+          <p class="prose">
+            Food, microcontrollers, and art supplies are provided. Nolop is confirmed for hackers,
+            and we’re working to open the other spaces too, with volunteers to help on the machines.
+          </p>
+        </div>
+        <ul class="spaces">
+          {
+            makerspaces.map((space) => (
+              <li>
+                <h3>{space.name}</h3>
+                <p>{space.use}</p>
+                <p class:list={['status', { confirmed: space.confirmed }]}>
+                  {space.confirmed ? 'Confirmed' : 'Not yet confirmed'}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="section band" id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <h2 id="faq-title">Questions</h2>
+        <div class="faq">
+          {
+            faq.map((item) => (
+              <details>
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section final" aria-labelledby="final-title">
+      <div class="wrap">
+        <h2 id="final-title">Build something meaningful.</h2>
+        <p>{event.dates} @ {event.room}. All majors, no experience needed.</p>
+        <a class="btn" href={event.registerUrl} target="_blank" rel="noopener">Register now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="sponsors">
+      <p class="visually-hidden">Sponsored by</p>
+      <Image src={greenFundLogo} alt="Tufts University Green Fund" width={285} />
+      <p class="tcu">
+        <span>TCU Sustainability Sub-Committee</span>
+        <span class="tcu-sub">Tufts Community Union Senate</span>
+      </p>
+    </div>
+    <p class="contact">
+      Organized by {event.contact.organizers}. Questions? Email <a
+        href={`mailto:${event.contact.email}`}>{event.contact.email}</a
+      >
+    </p>
+  </footer>
+</Base>
+
+<style>
+  /* ---------- Hero ---------- */
+  .hero {
+    --vpx: 6px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    padding-inline: calc(18 * var(--vpx) + var(--gutter));
+    padding-bottom: 4rem;
+  }
+
+  .vine {
+    position: absolute;
+    bottom: 0;
+    width: calc(18 * var(--vpx));
+    height: calc(180 * var(--vpx));
+    animation: grow 3.2s steps(60, end) both;
+  }
+
+  .vine-left {
+    left: 0;
+  }
+
+  .vine-right {
+    right: 0;
+    bottom: calc(-18 * var(--vpx));
+    transform: scaleX(-1);
+    animation-delay: 0.4s;
+  }
+
+  @keyframes grow {
+    from {
+      clip-path: inset(100% 0 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .spark {
+    position: absolute;
+  }
+  .s1 {
+    top: 9rem;
+    left: calc(18 * var(--vpx) + 2%);
+  }
+  .s2 {
+    top: 2.5rem;
+    left: 55%;
+  }
+  .s3 {
+    top: 12rem;
+    right: calc(18 * var(--vpx) + 4%);
+  }
+  .s4 {
+    top: 6rem;
+    right: calc(18 * var(--vpx) + 1%);
+  }
+
+  .nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.25rem;
+    font-family: var(--font-pixel);
+    font-size: var(--pixel-s);
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 1.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav a {
+    color: var(--paper);
+    text-decoration: none;
+  }
+
+  .nav ul a:hover {
+    color: var(--signal);
+  }
+
+  .hero-body {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 56rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .ask {
+    font-family: var(--font-pixel);
+    font-size: var(--pixel-l);
+    line-height: 1.5;
+    color: var(--signal);
+    max-width: 22ch;
+  }
+
+  .hero-body .diamonds {
+    width: min(100%, 26rem);
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(1.5rem, 6.4vw, 4.5rem);
+    line-height: 1.15;
+    text-transform: uppercase;
+    color: var(--signal);
+    text-shadow: 0.06em 0.06em 0 var(--violet-deep);
+  }
+
+  .when {
+    font-size: var(--pixel-m);
+  }
+
+  .when sup {
+    font-size: 0.55em;
+  }
+
+  .lede {
+    max-width: 34ch;
+    font-size: var(--step-1);
+    line-height: 1.35;
+  }
+
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 2.5rem;
+  }
+
+  .cta-btn {
+    position: relative;
+  }
+
+  .cursor {
+    position: absolute;
+    right: -2.25rem;
+    bottom: -2.5rem;
+    pointer-events: none;
+  }
+
+  .cta-link {
+    font-family: var(--font-pixel);
+    font-size: var(--pixel-s);
+    line-height: 1.6;
+  }
+
+  .perks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* ---------- Sections ---------- */
+  .section {
+    padding-block: clamp(4rem, 9vw, 7rem);
+  }
+
+  .band {
+    background: var(--violet-deep);
+  }
+
+  .wrap {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .section h2 {
+    font-size: var(--pixel-xl);
+    color: var(--signal);
+    margin-bottom: 2.5rem;
+  }
+
+  .section h3 {
+    font-size: var(--step-1);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 2rem 4rem;
+    align-items: start;
+  }
+
+  .split h2 {
+    margin-bottom: 0;
+  }
+
+  .prose {
+    max-width: var(--measure);
+  }
+
+  .prose p + p {
+    margin-top: 1em;
+  }
+
+  .aside {
+    margin-top: 2rem;
+    color: var(--muted);
+    max-width: var(--measure);
+  }
+
+  /* Steps */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.5rem 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .steps li {
+    display: grid;
+    gap: 0.6rem;
+    align-content: start;
+  }
+
+  .step-n {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--signal);
+    color: var(--ink);
+    font-family: var(--font-pixel);
+    font-size: var(--pixel-m);
+  }
+
+  .steps p {
+    color: var(--muted);
+  }
+
+  /* Schedule */
+  .days {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 4rem;
+  }
+
+  .day h3 {
+    color: var(--petal);
+    margin-bottom: 1rem;
+  }
+
+  .day ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .day li {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 1rem;
+    padding-block: 0.7rem;
+    border-top: 2px dashed rgb(250 254 244 / 0.18);
+  }
+
+  .time {
+    font-weight: 700;
+    color: var(--signal);
+  }
+
+  .note {
+    display: block;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  /* Prizes */
+  .prizes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 2rem 4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .prizes li {
+    display: grid;
+  }
+
+  .place {
+    color: var(--muted);
+  }
+
+  .amount {
+    font-family: var(--font-pixel);
+    font-size: var(--pixel-xl);
+    line-height: 1;
+    color: var(--paper);
+  }
+
+  .prizes li:first-child .amount {
+    font-size: var(--pixel-xxl);
+    color: var(--signal);
+  }
+
+  .rounds {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 4rem;
+    margin-top: 3.5rem;
+    max-width: 56rem;
+  }
+
+  .rounds h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .rounds p {
+    color: var(--muted);
+  }
+
+  /* Green Fund */
+  .fund {
+    background: var(--signal);
+    color: var(--ink);
+  }
+
+  .fund h2 {
+    color: var(--ink);
+    max-width: 22ch;
+    margin-bottom: 1.5rem;
+  }
+
+  .fund .prose {
+    font-size: var(--step-1);
+    line-height: 1.4;
+    max-width: 40ch;
+  }
+
+  /* Makerspaces */
+  .split .prose {
+    margin-top: 1.5rem;
+  }
+
+  .spaces {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .spaces li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.15rem 1rem;
+    padding-block: 1.1rem;
+    border-top: 2px dashed rgb(250 254 244 / 0.18);
+  }
+
+  .spaces li:last-child {
+    border-bottom: 2px dashed rgb(250 254 244 / 0.18);
+  }
+
+  .spaces h3 {
+    color: var(--paper);
+  }
+
+  .spaces p {
+    grid-column: 1;
+    color: var(--muted);
+  }
+
+  .spaces .status {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    font-size: 1rem;
+  }
+
+  .status.confirmed {
+    color: var(--signal);
+  }
+
+  /* FAQ */
+  .faq {
+    max-width: 48rem;
+  }
+
+  details {
+    border-top: 2px dashed rgb(250 254 244 / 0.18);
+  }
+
+  details:last-child {
+    border-bottom: 2px dashed rgb(250 254 244 / 0.18);
+  }
+
+  summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1.1rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: var(--step-1);
+    line-height: 1.25;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    content: '+';
+    color: var(--signal);
+  }
+
+  details[open] summary::after {
+    content: '−';
+  }
+
+  summary:hover {
+    color: var(--signal);
+  }
+
+  details p {
+    max-width: var(--measure);
+    padding-bottom: 1.25rem;
+    color: var(--muted);
+  }
+
+  /* Final call */
+  .final {
+    text-align: center;
+  }
+
+  .final .wrap {
+    display: grid;
+    justify-items: center;
+    gap: 1.5rem;
+  }
+
+  .final h2 {
+    font-size: clamp(var(--pixel-l), 4vw, var(--pixel-xxl));
+    margin-bottom: 0;
+  }
+
+  .final .btn {
+    margin-top: 1rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding-bottom: 2rem;
+  }
+
+  .sponsors {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem 4rem;
+    padding: 1.75rem var(--gutter);
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .sponsors img {
+    width: 285px;
+    height: auto;
+  }
+
+  .tcu {
+    display: grid;
+    font-size: var(--step-1);
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .tcu-sub {
+    font-size: 1rem;
+    color: #3d3d3d;
+  }
+
+  .contact {
+    margin-top: 2rem;
+    padding-inline: var(--gutter);
+    text-align: center;
+    color: var(--muted);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1100px) {
+    .hero {
+      --vpx: 4px;
+    }
+    .steps {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .hero {
+      --vpx: 2.5px;
+      padding-inline: calc(18 * var(--vpx) + 0.75rem);
+    }
+    .nav .home {
+      display: none;
+    }
+    .nav ul {
+      flex: 1;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .ask {
+      font-size: var(--pixel-m);
+    }
+    .section h2 {
+      font-size: var(--pixel-l);
+    }
+    .split,
+    .days,
+    .rounds {
+      grid-template-columns: 1fr;
+    }
+    .steps {
+      grid-template-columns: 1fr;
+    }
+    .s1,
+    .s2,
+    .s3 {
+      display: none;
+    }
+    .perks .pill {
+      font-size: var(--pixel-s);
+    }
+    .cursor {
+      right: -1.5rem;
+      bottom: -2rem;
+      width: 30px;
+      height: auto;
+    }
+  }
+</style>

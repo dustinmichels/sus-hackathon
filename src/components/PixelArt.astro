@@ -1,0 +1,42 @@
+---
+// Renders an ASCII sprite from src/data/pixels.ts as a crisp SVG.
+// Horizontal runs of one color merge into a single <rect>.
+import type { HTMLAttributes } from 'astro/types';
+import { palette } from '../data/pixels';
+
+interface Props extends HTMLAttributes<'svg'> {
+  art: string;
+  /** Rendered size of one sprite pixel, in CSS px. */
+  px?: number;
+}
+
+const { art, px = 4, ...attrs } = Astro.props;
+const rows = art.trim().split('\n');
+const width = Math.max(...rows.map((row) => row.length));
+const height = rows.length;
+
+const rects: { x: number; y: number; w: number; fill: string }[] = [];
+rows.forEach((row, y) => {
+  let x = 0;
+  while (x < row.length) {
+    const key = row[x];
+    let end = x + 1;
+    while (row[end] === key) end++;
+    const fill = palette[key];
+    if (fill) rects.push({ x, y, w: end - x, fill });
+    x = end;
+  }
+});
+---
+
+<svg
+  viewBox={`0 0 ${width} ${height}`}
+  width={width * px}
+  height={height * px}
+  shape-rendering="crispEdges"
+  aria-hidden="true"
+  focusable="false"
+  {...attrs}
+>
+  {rects.map((r) => <rect x={r.x} y={r.y} width={r.w} height="1" fill={r.fill} />)}
+</svg>
